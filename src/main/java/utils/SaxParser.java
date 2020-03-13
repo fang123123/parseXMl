@@ -81,7 +81,7 @@ public class SaxParser implements ElementHandler {
                 }
             }
             long endTime = System.currentTimeMillis();
-            System.out.println(String.format("分割文件结束，耗时：%d秒", (endTime - startTime) / 1000));
+            System.out.println(String.format("解析xml结束，耗时：%d秒", (endTime - startTime) / 1000));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -173,11 +173,12 @@ public class SaxParser implements ElementHandler {
         }
     }
     public static void main(String[] args) {
+        //源文件路径
         String sourceFilePath = "D:\\研究生\\专利数据解析\\ipg190101.xml";
+        //处理后文件路径
         String targetFilePath = "parseData.txt";
         System.out.println("----程序开始----");
+        //执行解析程序，并保存
         new SaxParser(sourceFilePath, targetFilePath);
-//        List<Patent> patents = FileUtils.readSerializableFile(targetFilePath);
-//        showResult(patents);
     }
 }
