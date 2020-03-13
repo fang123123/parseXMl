@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="291d42d2-d392-43a1-be14-e52883a3eb4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parseData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Patent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Patent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/SaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SaxParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ParseXml.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Invention.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Invention.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Nplcit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Nplcit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Patent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Patent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/SaxParser$IgnoreDTDEntityResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/SaxParser$IgnoreDTDEntityResolver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/SaxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/SaxParser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +93,7 @@
       <workItem from="1584065189607" duration="7042000" />
       <workItem from="1584079572241" duration="858000" />
       <workItem from="1584080908548" duration="13080000" />
+      <workItem from="1584094769834" duration="893000" />
     </task>
     <servers />
   </component>
@@ -129,22 +121,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="354" width="503" height="343" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1584078298388" />
-    <state width="1865" height="336" key="GridCell.Tab.0.bottom" timestamp="1584094487683">
+    <state width="1865" height="215" key="GridCell.Tab.0.bottom" timestamp="1584095663659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
-    <state width="1865" height="336" key="GridCell.Tab.0.center" timestamp="1584094487683">
+    <state width="1865" height="215" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584095663659" />
+    <state width="1865" height="215" key="GridCell.Tab.0.center" timestamp="1584095663658">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
-    <state width="1865" height="336" key="GridCell.Tab.0.left" timestamp="1584094487683">
+    <state width="1865" height="215" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584095663658" />
+    <state width="1865" height="215" key="GridCell.Tab.0.left" timestamp="1584095663658">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
-    <state width="1865" height="336" key="GridCell.Tab.0.right" timestamp="1584094487683">
+    <state width="1865" height="215" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584095663658" />
+    <state width="1865" height="215" key="GridCell.Tab.0.right" timestamp="1584095663659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="215" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584095663659" />
     <state width="1865" height="336" key="GridCell.Tab.1.bottom" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,10 +161,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1584093921936" />
-    <state x="577" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1584080931318">
+    <state x="577" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1584094769780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584080931318" />
+    <state x="577" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584094769780" />
     <state x="532" y="237" width="840" height="1034" key="run.anything.popup" timestamp="1584018721389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

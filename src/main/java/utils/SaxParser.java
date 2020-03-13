@@ -69,6 +69,10 @@ public class SaxParser implements ElementHandler {
             String lineStr;
             while ((lineStr = bufferedReader.readLine()) != null) {
                 stringBuilder.append(lineStr).append("\r\n");
+                if(lineStr.equals("</sequence-cwu>")){
+                    //清空文本
+                    stringBuilder.delete(0, stringBuilder.length());
+                }
                 if (lineStr.equals("</us-patent-grant>")) {
                     InputStream in = new ByteArrayInputStream(stringBuilder.toString().getBytes());
                     saxReader.read(in);
@@ -107,7 +111,7 @@ public class SaxParser implements ElementHandler {
             nplcits.clear();
             //得先添加进去之后再清空
             patents.add(patent);
-            if (patents.size()  >1000) {
+            if (patents.size() > 1000) {
                 FileUtils.writeFile(targetFilePath, patents);
                 patents.clear();
             }
