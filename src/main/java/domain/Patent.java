@@ -51,9 +51,10 @@ public class Patent implements Serializable {
             if (i < nplcits.size() - 1) {
                 res.append(nplcits.get(i) + ",\n");
             } else {
-                res.append(nplcits.get(i) + "\n}");
+                res.append(nplcits.get(i) + "\n");
             }
         }
+        res.append("}");
         return res.toString();
     }
 }

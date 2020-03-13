@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="291d42d2-d392-43a1-be14-e52883a3eb4e" name="Default Changelist" comment="" />
+    <list default="true" id="291d42d2-d392-43a1-be14-e52883a3eb4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parseData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Patent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Patent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SaxParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ParseXml.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Invention.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Invention.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Nplcit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Nplcit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Patent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Patent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/SaxParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/SaxParser.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +39,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1Z1StWLPG0nDBw95zHiRYkkxzwx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,15 +47,23 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\ParseXml\src\main\resources" />
     </key>
@@ -73,7 +99,9 @@
       <option name="presentableId" value="Default" />
       <updated>1584005321501</updated>
       <workItem from="1584005324974" duration="25923000" />
-      <workItem from="1584065189607" duration="3288000" />
+      <workItem from="1584065189607" duration="7042000" />
+      <workItem from="1584079572241" duration="858000" />
+      <workItem from="1584080908548" duration="13080000" />
     </task>
     <servers />
   </component>
@@ -81,6 +109,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="452" y="96" key="#Project_Structure" timestamp="1584079434238">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="96" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1584079434238" />
+    <state x="414" y="168" width="1178" height="703" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584079403415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="168" width="1178" height="703" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584079403415" />
     <state x="658" y="306" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584028681347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -89,42 +125,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="721" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584022336088" />
-    <state width="1865" height="218" key="GridCell.Tab.0.bottom" timestamp="1584074261130">
+    <state x="708" y="354" width="503" height="343" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584078298388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584074261130" />
-    <state width="1865" height="218" key="GridCell.Tab.0.center" timestamp="1584074261130">
+    <state x="708" y="354" width="503" height="343" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1584078298388" />
+    <state width="1865" height="336" key="GridCell.Tab.0.bottom" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="218" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584074261130" />
-    <state width="1865" height="218" key="GridCell.Tab.0.left" timestamp="1584074261130">
+    <state width="1865" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.0.center" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="218" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584074261130" />
-    <state width="1865" height="218" key="GridCell.Tab.0.right" timestamp="1584074261130">
+    <state width="1865" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.0.left" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="218" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584074261130" />
-    <state width="1865" height="250" key="GridCell.Tab.1.bottom" timestamp="1584032681637">
+    <state width="1865" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.0.right" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="250" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584032681637" />
-    <state width="1865" height="250" key="GridCell.Tab.1.center" timestamp="1584032681636">
+    <state width="1865" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.1.bottom" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="250" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584032681636" />
-    <state width="1865" height="250" key="GridCell.Tab.1.left" timestamp="1584032681636">
+    <state width="1865" height="336" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.1.center" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="250" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584032681636" />
-    <state width="1865" height="250" key="GridCell.Tab.1.right" timestamp="1584032681637">
+    <state width="1865" height="336" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.1.left" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="250" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584032681637" />
-    <state x="577" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1584071812063">
+    <state width="1865" height="336" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state width="1865" height="336" key="GridCell.Tab.1.right" timestamp="1584094487683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584071812063" />
+    <state width="1865" height="336" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584094487683" />
+    <state x="345" y="0" key="SettingsEditor" timestamp="1584080650303">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="345" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584080650303" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1584093921936">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1584093921936" />
+    <state x="577" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1584080931318">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="577" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584080931318" />
     <state x="532" y="237" width="840" height="1034" key="run.anything.popup" timestamp="1584018721389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -133,5 +181,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="-5" width="838" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584073637437" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="patents.get(1)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

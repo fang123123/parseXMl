@@ -8,15 +8,19 @@ import org.dom4j.Element;
 import org.dom4j.ElementHandler;
 import org.dom4j.ElementPath;
 import org.dom4j.io.SAXReader;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +32,8 @@ import java.util.List;
  */
 public class SaxParser implements ElementHandler {
     private SAXReader saxReader;
-    private String inFilePath;
-    private String outFilePath;
+    private String sourceFilePath;
+    private String targetFilePath;
     private String patentId;
     private String inventionId;
     private String inventionTitle;
@@ -41,27 +45,45 @@ public class SaxParser implements ElementHandler {
     private Patent patent;
     private List<Nplcit> nplcits;
     private List<Patent> patents;
-    private static Integer times = 10;
 
-    public SaxParser(String inFilePath, String outFilePath) {
-        this.inFilePath = inFilePath;
-        this.outFilePath = outFilePath;
-        try {
-            File file = new File(inFilePath);
-            if (!file.exists()) {
-                throw new RuntimeException("输入文件不存在");
+    public SaxParser(String sourceFilePath, String targetFilePath) {
+        this.sourceFilePath = sourceFilePath;
+        this.targetFilePath = targetFilePath;
+        nplcits = new ArrayList<Nplcit>();
+        patents = new ArrayList<Patent>();
+        saxReader = new SAXReader();
+        saxReader.addHandler("/us-patent-grant", SaxParser.this);
+        saxReader.addHandler("/us-patent-grant/us-bibliographic-data-grant/invention-title", SaxParser.this);
+        saxReader.addHandler("/us-patent-grant/us-bibliographic-data-grant/us-references-cited/us-citation", SaxParser.this);
+        saxReader.setEntityResolver(new IgnoreDTDEntityResolver());
+        File sourceFile = new File(sourceFilePath);
+        if (!sourceFile.exists() || sourceFile.isDirectory()) {
+            throw new RuntimeException("源文件不存在或源文件是一个文件夹");
+        }
+        System.out.println("开始解析文件...");
+        long startTime = System.currentTimeMillis();
+        StringBuilder stringBuilder = new StringBuilder();
+        try (FileInputStream fileInputStream = new FileInputStream(sourceFile);
+             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8);
+             BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
+            String lineStr;
+            while ((lineStr = bufferedReader.readLine()) != null) {
+                stringBuilder.append(lineStr).append("\r\n");
+                if (lineStr.equals("</us-patent-grant>")) {
+                    InputStream in = new ByteArrayInputStream(stringBuilder.toString().getBytes());
+                    saxReader.read(in);
+                    //清空文本
+                    stringBuilder.delete(0, stringBuilder.length());
+                }
             }
-            nplcits = new ArrayList<Nplcit>();
-            patents = new ArrayList<Patent>();
-            InputStream in = new FileInputStream(file);
-            saxReader = new SAXReader();
-            saxReader.addHandler("/us-patent-grant", SaxParser.this);
-            saxReader.addHandler("/us-patent-grant/us-bibliographic-data-grant/invention-title", SaxParser.this);
-            saxReader.addHandler("/us-patent-grant/us-bibliographic-data-grant/us-references-cited/us-citation", SaxParser.this);
-            saxReader.read(in);
-        } catch (DocumentException e) {
-            e.printStackTrace();
+            long endTime = System.currentTimeMillis();
+            System.out.println(String.format("分割文件结束，耗时：%d秒", (endTime - startTime) / 1000));
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            System.out.println(stringBuilder.toString());
             e.printStackTrace();
         }
     }
@@ -85,7 +107,10 @@ public class SaxParser implements ElementHandler {
             nplcits.clear();
             //得先添加进去之后再清空
             patents.add(patent);
-            saveFile(outFilePath);
+            if (patents.size()  >1000) {
+                FileUtils.writeFile(targetFilePath, patents);
+                patents.clear();
+            }
         } else if (root.getName().equals("invention-title")) {
             if (root.getText() == null) {
                 inventionTitle = "";
@@ -129,83 +154,26 @@ public class SaxParser implements ElementHandler {
         root.detach(); //记得从内存中移去
     }
 
-    //保存中间结果
-    private void saveFile(String path) {
-        boolean append = false;
-        File file = new File(path);
-        if (file.exists()) {
-            append = true;
-        }
-        if (times >= 0) {
-            times--;
-            FileOutputStream fstream = null;
-            ObjectOutputStream ostream = null;
-            try {
-                fstream = new FileOutputStream(file, append);
-                ostream = new ObjectOutputStream(fstream);
-                long pos = 0;
-                if (append) {
-                    // getChannel()返回此通道的文件位置，这是一个非负整数，它计算从文件的开始到当前位置之间的字节数
-                    pos = fstream.getChannel().position() - 4;// StreamHeader有4个字节所以减去
-                    // 将此通道的文件截取为给定大小
-                    fstream.getChannel().truncate(pos);
-                }
-                ostream.writeObject(patents);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    patents.clear();
-                    ostream.close();
-                    fstream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    private static List<Patent> loadFile(String path) {
-        File file = new File(path);
-        if (!file.exists()) {
-            return null;
-        }
-        FileInputStream fstream = null;
-        ObjectInputStream ostream = null;
-        List<Patent> patents = new ArrayList<Patent>();
-        try {
-            fstream = new FileInputStream(file);
-            ostream = new ObjectInputStream(fstream);
-            patents.addAll((List<Patent>) ostream.readObject());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                ostream.close();
-                fstream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return patents;
-    }
     private static void showResult(List<Patent> patents) {
         for (int i = 0; i < patents.size(); i++) {
             System.out.println(patents.get(i));
         }
     }
+    private class IgnoreDTDEntityResolver implements EntityResolver {
+
+        public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+            return new InputSource(
+                    new ByteArrayInputStream(
+                            "<?xml version='1.0' encoding='UTF-8'?>".getBytes()
+                    ));
+        }
+    }
     public static void main(String[] args) {
-        String inFilePath = "D:\\研究生\\专利数据解析\\ipg190101.xml";
-        String outFilePath = "parseData.txt";
+        String sourceFilePath = "D:\\研究生\\专利数据解析\\ipg190101.xml";
+        String targetFilePath = "parseData.txt";
         System.out.println("----程序开始----");
-        long startTime = System.currentTimeMillis(); //获取开始时间
-        new SaxParser(inFilePath, outFilePath);
-        List<Patent> patents = loadFile(outFilePath);
-        showResult(patents);
-        long endTime = System.currentTimeMillis(); //获取结束时间
-        System.out.println("程序运行时间：" + (endTime - startTime) + "ms"); //输出程序运行时间
+        new SaxParser(sourceFilePath, targetFilePath);
+//        List<Patent> patents = FileUtils.readSerializableFile(targetFilePath);
+//        showResult(patents);
     }
 }
